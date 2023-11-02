@@ -38,7 +38,7 @@
     }
   },
   "scripts": {
-  "start": "bun ./src/server.ts",
+    "start": "source .env && bun ./src/server.ts --port $PORT --l1-provider-url $L1_PROVIDER_URL --l2-provider-url $L2_PROVIDER_URL --l2-output-oracle $L2_OUTPUT_ORACLE --delay $DELAY",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "build:cjs": "tsc --project tsconfig.build.json --module commonjs --outDir ./_cjs --removeComments --verbatimModuleSyntax false && echo > ./_cjs/package.json '{\"type\":\"commonjs\"}'",
